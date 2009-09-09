@@ -6,15 +6,14 @@
 %define	pdir	MooseX
 %define	pnam	SemiAffordanceAccessor
 Summary:	MooseX::SemiAffordanceAccessor - Name your accessors foo() and set_foo()
-#Summary(pl.UTF-8):
+Summary(pl.UTF-8):	MooseX::SemiAffordanceAccessor - nazywa metody dostępowe foo() i set_foo()
 Name:		perl-MooseX-SemiAffordanceAccessor
-Version:	0.03
+Version:	0.05
 Release:	1
-# same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/MooseX/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	1d0b31890f78194fa9dc07bd046b6f54
+# Source0-md5:	4e917185d50a0de2dc9942a643eb76bd
 URL:		http://search.cpan.org/dist/MooseX-SemiAffordanceAccessor/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
@@ -39,7 +38,10 @@ attribute, then that attribute's naming scheme is left unchanged.
 The name "semi-affordance" comes from David Wheeler's Class::Meta
 module.
 
-# %description -l pl.UTF-8
+%description -l pl.UTF-8
+Moduł ten nie dostarcza żanych metod. Załadowanie go zmienia domyślną
+politykę nazywania dla ładowanych klas, tak że metody dostępowe są
+rozdzielone na metody get i set.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
@@ -64,5 +66,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc Changes README
 %{perl_vendorlib}/MooseX/*.pm
+%dir %{perl_vendorlib}/MooseX/SemiAffordanceAccessor/
+%dir %{perl_vendorlib}/MooseX/SemiAffordanceAccessor/Role
 %{perl_vendorlib}/MooseX/SemiAffordanceAccessor/Role/Attribute.pm
 %{_mandir}/man3/*
