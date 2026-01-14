@@ -8,7 +8,7 @@ Summary:	MooseX::SemiAffordanceAccessor - Name your accessors foo() and set_foo(
 Summary(pl.UTF-8):	MooseX::SemiAffordanceAccessor - nazywa metody dostępowe foo() i set_foo()
 Name:		perl-MooseX-SemiAffordanceAccessor
 Version:	0.09
-Release:	1
+Release:	2
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/MooseX/%{pdir}-%{pnam}-%{version}.tar.gz
